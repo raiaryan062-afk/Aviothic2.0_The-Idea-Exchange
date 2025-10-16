@@ -152,7 +152,7 @@
         document.getElementById("vehicles1").appendChild(v);
       }
 
-      document.getElementById("emergency1").innerText = feed1.hasEmergency ? Emergency: ${feed1.emergencyType} : "Emergency: None";
+      document.getElementById("emergency1").innerText = feed1.hasEmergency ? `Emergency: ${feed1.emergencyType}` : "Emergency: None";
       document.getElementById("light1").className = "light " + (activeLight === 1 ? "green" : "red");
       document.getElementById("status1").innerText = activeLight === 1 ? "GO" : "STOP";
 
@@ -164,7 +164,7 @@
         document.getElementById("vehicles2").appendChild(v);
       }
 
-      document.getElementById("emergency2").innerText = feed2.hasEmergency ? Emergency: ${feed2.emergencyType} : "Emergency: None";
+      document.getElementById("emergency2").innerText = feed2.hasEmergency ? `Emergency: ${feed2.emergencyType}` : "Emergency: None";
       document.getElementById("light2").className = "light " + (activeLight === 2 ? "green" : "red");
       document.getElementById("status2").innerText = activeLight === 2 ? "GO" : "STOP";
 
@@ -181,7 +181,7 @@
     function logViolation(feedNumber, count) {
       violationCount++;
       const li = document.createElement("li");
-      li.innerText = [${new Date().toLocaleTimeString()}] Feed ${feedNumber}: ${count} vehicle(s) ran red light;
+      li.innerText = `[${new Date().toLocaleTimeString()}] Feed ${feedNumber}: ${count} vehicle(s) ran red light`;
       document.getElementById("violationsList").prepend(li);
     }
 
